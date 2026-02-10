@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Kang Service - spesialis service AC profesional di Gowa. Ahli cuci AC, perbaikan, instalasi, dan isi freon. Rating 4.9★. Hubungi WhatsApp untuk layanan cepat.',
   generator: 'kangservice',
   icons: {
-    icon: '/kangservice.png',
+    icon: '/logo.png',
   },
   viewport: {
     width: 'device-width',
