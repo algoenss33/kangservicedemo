@@ -461,48 +461,63 @@ export default function Page() {
               Cara Kerja Kami
             </p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Servis AC Jadi Mudah & Transparan
+              Kami Perbaiki AC Anda, Hasilnya Sempurna!
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">
-              Dari konsultasi awal hingga tindak lanjut setelah pengerjaan, semua proses kami
-              rancang agar Anda merasa aman dan nyaman.
+              Di Kang Service, setiap layanan kami dirancang untuk membuat AC Anda kembali dingin,
+              optimal, dan dikerjakan dengan langkah yang cepat, rapi, dan terpercaya.
             </p>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-4">
             {[
               {
                 step: '01',
-                title: 'Ceritakan Kebutuhan Anda',
+                title: 'Pemasangan & Perakitan AC',
                 description:
-                  'Hubungi kami via WhatsApp atau telepon dan jelaskan keluhan AC Anda.',
+                  'Teknisi kami menangani pemasangan dan perakitan AC dengan presisi agar unit terpasang sempurna.',
+                image: '/teknisi8.jpg',
               },
               {
                 step: '02',
-                title: 'Dapatkan Rencana & Penawaran',
+                title: 'Pembersihan & Perbaikan Saluran AC',
                 description:
-                  'Kami analisa keluhan dan berikan estimasi biaya yang jelas & transparan.',
+                  'Kami membersihkan dan memperbaiki saluran AC secara menyeluruh agar aliran udara tetap sejuk.',
+                image: '/teknisi7.jpg',
               },
               {
                 step: '03',
-                title: 'Teknisi Datang & Bekerja',
+                title: 'Perbaikan Dinding Ruangan',
                 description:
-                  'Tim kami datang sesuai jadwal, mengerjakan dengan rapi dan profesional.',
+                  'Selain AC, area pemasangan kami rapikan kembali agar tampilan ruangan tetap estetik.',
+                image: '/teknisi1.jpg',
               },
               {
                 step: '04',
-                title: 'Tindak Lanjut & Garansi',
+                title: 'Perbaikan Kerangka & Penyangga AC',
                 description:
-                  'Setelah selesai, kami siap membantu jika ada keluhan lanjutan dalam masa garansi.',
+                  'Jika unit AC goyah atau penyangga tidak stabil, teknisi kami memperbaikinya hingga aman dan kokoh.',
+                image: '/teknisi9.jpg',
               },
             ].map((item) => (
-              <Card key={item.step} className="relative h-full overflow-hidden border-border/70">
-                <CardContent className="flex h-full flex-col gap-3 p-6">
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                    Langkah
-                  </span>
-                  <p className="text-3xl font-bold text-foreground">{item.step}</p>
-                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+              <Card
+                key={item.step}
+                className="flex h-full flex-col overflow-hidden border-none bg-transparent text-foreground"
+              >
+                <div className="relative h-40 w-full overflow-hidden rounded-2xl bg-muted">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 260px, 100vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute left-4 top-4 rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-semibold text-white shadow-md">
+                    {item.step}
+                  </div>
+                </div>
+                <CardContent className="flex flex-1 flex-col items-center gap-2 px-0 pt-6 text-center">
+                  <h3 className="text-base font-semibold md:text-lg">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground md:text-sm">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -525,6 +540,50 @@ export default function Page() {
               kantor akan ada penyesuaian biaya tambahan.
             </p>
           </div>
+          {/* Highlighted price cards */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: 'Cuci AC Reguler',
+                price: 'Mulai Rp75.000',
+                items: ['Cuci AC 0.5 – 1 PK', 'Pembersihan indoor & outdoor', 'Pengecekan fungsi dasar'],
+                accent: 'bg-[#FF7A00]',
+              },
+              {
+                title: 'Perawatan Lengkap',
+                price: 'Mulai Rp250.000',
+                items: ['Cuci AC + Vakum', 'Cek kebocoran freon', 'Pengecekan kelistrikan dasar'],
+                accent: 'bg-primary',
+              },
+              {
+                title: 'Instalasi & Bongkar Pasang',
+                price: 'Mulai Rp350.000',
+                items: ['Pasang AC baru', 'Bongkar pasang unit lama', 'Penataan pipa & kabel rapi'],
+                accent: 'bg-[#0AA5FF]',
+              },
+            ].map((card) => (
+              <Card
+                key={card.title}
+                className="flex h-full flex-col overflow-hidden border-none bg-white shadow-sm"
+              >
+                <div className={`h-2 w-full ${card.accent}`} />
+                <CardContent className="flex flex-1 flex-col gap-3 p-6">
+                  <h3 className="text-base font-semibold text-foreground md:text-lg">{card.title}</h3>
+                  <p className="text-sm font-bold text-primary">{card.price}</p>
+                  <ul className="mt-1 space-y-1 text-xs text-muted-foreground md:text-sm">
+                    {card.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF7A00]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Full price table */}
           <div className="mt-10 overflow-hidden rounded-xl border border-border/70 bg-white">
             <div className="max-h-[460px] overflow-auto text-sm">
               <table className="min-w-full border-collapse">
@@ -575,6 +634,40 @@ export default function Page() {
                 kunjungan <span className="font-semibold text-foreground">Rp50.000</span>.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brands Section */}
+      <section className="bg-white py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-6 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Merk yang Kami Tangani
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              Kang Service berpengalaman menangani berbagai merk AC ternama.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            {[
+              { src: '/panasonik-removebg-preview.png', alt: 'Panasonic' },
+              { src: '/lg-removebg-preview.png', alt: 'LG' },
+              { src: '/midea-removebg-preview.png', alt: 'Midea' },
+              { src: '/daikin-removebg-preview.png', alt: 'Daikin' },
+              { src: '/changhong-removebg-preview.png', alt: 'Changhong' },
+              { src: '/sharp-removebg-preview.png', alt: 'Sharp' },
+            ].map((brand) => (
+              <div key={brand.src} className="relative h-10 w-24 md:h-12 md:w-28">
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  fill
+                  sizes="120px"
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
