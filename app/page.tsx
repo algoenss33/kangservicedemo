@@ -32,8 +32,8 @@ export default function Page() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const whatsappNumber = '628124082991'
-  const phoneNumber = '628124082991'
+  const whatsappNumber = '6281240829156'
+  const phoneNumber = '6281240829156'
   const whatsappMessage = encodeURIComponent(
     'Halo, saya tertarik dengan layanan Service AC Gowa. Bisakah Anda membantu saya?',
   )
