@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light theme – biru tua #00214B dan putih */
+    --background: 0 0% 100%;
+    --foreground: 221 100% 15%; /* #00214B */
+    --card: 0 0% 100%;
+    --card-foreground: 221 100% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 100% 15%;
+    --primary: 221 100% 15%; /* #00214B */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 100% 96%; /* biru sangat muda untuk background */
+    --secondary-foreground: 221 100% 15%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 40%;
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 221 100% 15%;
+    --chart-1: 221 100% 15%;
+    --chart-2: 210 100% 50%;
+    --chart-3: 210 80% 60%;
+    --chart-4: 210 70% 40%;
+    --chart-5: 210 60% 30%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 221 100% 15%;
+    --sidebar-primary: 221 100% 15%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 221 100% 15%;
+  }
+  .dark {
+    --background: 221 100% 7%;
+    --foreground: 0 0% 100%;
+    --card: 221 100% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 221 100% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 221 100% 10%;
+    --secondary: 221 30% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 221 25% 20%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 210 100% 60%;
+    --accent-foreground: 221 100% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 221 25% 25%;
+    --input: 221 25% 25%;
+    --ring: 210 100% 60%;
+    --chart-1: 210 100% 60%;
+    --chart-2: 221 100% 40%;
+    --chart-3: 210 80% 70%;
+    --chart-4: 221 80% 30%;
+    --chart-5: 210 70% 50%;
+    --sidebar-background: 221 100% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 221 100% 10%;
+    --sidebar-accent: 221 30% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 221 25% 25%;
+    --sidebar-ring: 210 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes hero-float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+}
